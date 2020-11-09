@@ -3,13 +3,13 @@
 # От оригинального образа отличается фиксированными версиями базового дистрибутива и
 # Ansible, настроенной локалью C.UTF-8, и отключенной проверкой ключей хостов SSH.
 
-FROM debian:9.2
+FROM debian:10.6
 
 LABEL maintainer "Nikolay Artamonov <nartamonov@gmail.com>"
 
 ENV LANG C.UTF-8
 
-ENV ANSIBLE_VERSION 2.4.1.0
+ENV ANSIBLE_VERSION 2.10.3
 
 RUN echo "===> Installing python, sudo, and supporting tools..."  && \
     apt-get update -y  &&  apt-get install --fix-missing          && \

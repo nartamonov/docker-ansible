@@ -1,7 +1,8 @@
 # Основан на популярном образе William-Yeh/docker-ansible
 # (см. https://github.com/William-Yeh/docker-ansible/blob/master/debian9/Dockerfile)
 # От оригинального образа отличается фиксированными версиями базового дистрибутива и
-# Ansible, настроенной локалью C.UTF-8, и отключенной проверкой ключей хостов SSH.
+# Ansible, настроенной локалью C.UTF-8, отключенной проверкой ключей хостов SSH и
+# наличием утилиты yamllint.
 
 FROM debian:10.6
 
@@ -26,7 +27,7 @@ RUN echo "===> Installing python, sudo, and supporting tools..."  && \
     \
     \
     echo "===> Installing handy tools (not absolutely required)..."  && \
-    apt-get install -y sshpass openssh-client  && \
+    apt-get install -y sshpass openssh-client yamllint && \
     \
     \
     echo "===> Removing unused APT resources..."                  && \
